@@ -13,8 +13,7 @@
  * Return: number of chars printed
  */
 
-int handle_write_char(char c, char buffer[],
-		int flags, int int width, int precision, int size)
+int handle_write_char(char c, char buffer[], int flags, int width, int precision, int size)
 {
 	int i = 0;
 	int padd = ' ';
@@ -124,7 +123,7 @@ int write_num(int ind, char buffer[],
 		{
 			if (extra_c)
 				buffer[--padd_start] = extra_c;
-			return (write(1, &buffer[pad_start], i - padd_start) +
+			return (write(1, &buffer[padd_start], i - padd_start) +
 					write(1, &buffer[ind], length - (1 - padd_start)));
 		}
 	}
